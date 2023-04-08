@@ -1,1 +1,15 @@
 include ':app'
+// Gradle version: 7.5
+//
+// Path: app\build.gradle
+// Compare this snippet from app\build.gradle:
+// apply plugin: 'com.android.application'
+//
+// android {
+//     compileSdkVersion 28
+//     defaultConfig {
+//         applicationId "com.example.myfirstapp"
+//         minSdkVersion 15
+//         targetSdkVersion 28
+//         versionCode 1
+//         versionName "1.0-${System.env.VERSION_SHA}"
