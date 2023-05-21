@@ -20,10 +20,10 @@ Poäng:
     Tekniska lösningar:
         Navigering i appen mha navgraphs fullt ut, även i list-detail (1p)
 
-        Användning safeargs för att skicka argument mellan fragment, samt förklaring i kodkommentarer av fördelen med safeargs      . jämtemot att skicka argument mha Bundle och set/getargs. (1p)
-
-
+        Användning safeargs för att skicka argument mellan fragment, samt förklaring i kodkommentarer av fördelen med safeargs jämtemot att skicka argument mha Bundle och set/getargs. (1p)
 
     Användbarhet:
+        
+-------------------------------------
 
 Totalt: 9 poäng
