@@ -103,9 +103,6 @@ public class ListingFragment extends Fragment {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-//                    String message = MainActivity.getErrorMessage(error);
-//                    Log.i("Error", message);
-//                    Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
                 }
             })  {
                 @Override
@@ -135,7 +132,7 @@ public class ListingFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 String message = MainActivity.getErrorMessage(error);
                 Log.i("Error", message);
-                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
             }
         });
         ownerQueue.add(ownerRequest);
@@ -206,7 +203,7 @@ public class ListingFragment extends Fragment {
                                 public void onErrorResponse(VolleyError error) {
                                     String message = MainActivity.getErrorMessage(error);
                                     Log.i("Error", message);
-                                    Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                                    createNewChat();
                                 }
                             }
                     ) {
@@ -222,8 +219,8 @@ public class ListingFragment extends Fragment {
             });
         }
 
-        if (Authentication.getId() == null) {
-            binding.favoriteButton.setVisibility(View.GONE);
+        if (Authentication.getId() != null) {
+            binding.favoriteButton.setVisibility(View.VISIBLE);
 
         }
 
@@ -253,7 +250,7 @@ public class ListingFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         String message = MainActivity.getErrorMessage(error);
                         Log.i("Error", message);
-                        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                         switchFavoriteButton(false);
 
                     }
@@ -289,7 +286,7 @@ public class ListingFragment extends Fragment {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Toast.makeText(getContext(), "Listing Unfavorited", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "Listing Unfavorited", Toast.LENGTH_SHORT).show();
                                     binding.favoriteButton.setText(R.string.favorite);
 
                                     switchFavoriteButton(false);
@@ -300,7 +297,7 @@ public class ListingFragment extends Fragment {
                                 public void onErrorResponse(VolleyError error) {
                                     String message = MainActivity.getErrorMessage(error);
                                     Log.i("Error", message);
-                                    Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 
                                     switchFavoriteButton(false);
                                 }
@@ -331,7 +328,7 @@ public class ListingFragment extends Fragment {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Toast.makeText(getContext(), "Listing Favorited", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "Listing Favorited", Toast.LENGTH_SHORT).show();
                                     binding.favoriteButton.setText(R.string.unfavorite);
 
                                     switchFavoriteButton(true);
@@ -342,7 +339,7 @@ public class ListingFragment extends Fragment {
                                 public void onErrorResponse(VolleyError error) {
                                     String message = MainActivity.getErrorMessage(error);
                                     Log.i("Error", message);
-                                    Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 
                                     switchFavoriteButton(true);
                                 }
@@ -380,7 +377,7 @@ public class ListingFragment extends Fragment {
                             action = ListingFragmentDirections.actionListingFragmentToChatFragment(chatData);
 
                             MainActivity.getNavController().navigate(action);
-                            Toast.makeText(getContext(), "New chat created", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "New chat created", Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -391,7 +388,7 @@ public class ListingFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         String message = MainActivity.getErrorMessage(error);
                         Log.i("Error", message);
-                        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                     }
                 }
         ) {
@@ -438,7 +435,7 @@ public class ListingFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         String message = MainActivity.getErrorMessage(error);
                         Log.i("Error", message);
-                        Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 
                         switchFavoriteButton(false);
                     }
